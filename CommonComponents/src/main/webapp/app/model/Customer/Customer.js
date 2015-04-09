@@ -2,6 +2,7 @@ Ext.define('MyApp.model.Customer.Customer', {
 	extend: 'Ext.data.Model',
 	idProperty:'Id',
 	fields: [
+	   {  name: 'Num', type:'String'},      
 	   {  name: 'Id', type:'int', defaultValue: 0},
 	   {  name: 'firstName', type:'String'},
 	   {  name: 'middleName', type:'String'},
