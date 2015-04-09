@@ -1,0 +1,131 @@
+.header h1 {font-weight: bold;font-size: 1.5em; display: inline-block; margin:0 0 0 5px;line-height:.3em;padding-left: 20px;vertical-align: middle;}
+.header_logo {padding : 8px !important; }
+body.x-border-layout-ct, div.x-border-layout-ct {
+	background-color: white;
+}
+
+.last_updates{
+	left:0 !important;
+	margin-bottom : 10px;
+	font-size : 0.8em;
+	padding: 0px !important;
+}
+
+.large_header_text{
+	text-align: center;
+	font-weight: bold;
+	font-size: 190%;
+	color: black !important;
+	font-family: "Times New Roman", Times, serif;
+	position: relative !important;
+	display: block !important;
+	padding-right: 0px !important;
+	padding-left: 10px !important;	
+}
+
+.navbar-barclays {
+	background-color: #FFFFFF;
+	border-bottom: 3px solid #34b4d1;
+	border-radius: 0px;
+}
+
+.small_header_text{
+	text-align: center;
+	font-weight: bold;
+	font-size: 120%;
+	color: black !important;
+	font-family: "Times New Roman", Times, serif;
+}
+
+.footer_text{
+	font-size: 90% !importantl
+}
+
+excel_btn{
+	
+}
+
+.icon-search{
+	background-image: url(../images/custom/searchicon.png);
+}
+
+.x-tool-excel_export{
+	background-image: url(../images/custom/excel.jpg);
+}
+
+.x-tool-pdf_export{
+	background-image: url(../images/custom/pdf.jpg);
+}
+
+.nav > li > a:hover, .nav > li > a:focus{
+	text-decoration: none !important;
+	background-color: #FFF !important;
+}
+
+.nav > li > a{
+	position: relative !important;
+	display: block !important;
+	/* padding: 10px 15px; overriden*/
+	padding-right: 5px !important;
+}
+
+.studentinfo {
+	width: 400px;
+	padding: 5px 5px 5px 5px;
+	margin: 5px 5px 5px 5px;
+	border: 1px solid blue;
+}
+
+.studentinfo br {
+	clear: both;
+}
+
+.label {
+	float: left;
+	width: 100px;
+	font-weight: bold;
+	color: black;
+}
+
+.heading{
+	float: left;
+	width: 200px;
+	font-weight: bold;
+	margin: 5px 5px 5px 5px;
+}
+
+.yellowbg{
+	background-color: yellow;
+}
+
+.borderless{
+	border-width: 0;
+}
+
+.accordianAlignment{
+	border-radius: 3px;
+	padding: 3px 3px 3px 3px;
+	border-width: 1px;
+	border-style: solid;
+	background-color: #3892d3;
+	border-color: #157fcc;
+	width: 26px !important;
+	height: 26px !important;
+}
+
+.person{
+	background-image: url(../images/glyphicons/icons/png/glyphicons-44-group.png);
+}
+.bullets{
+	background-image: url(../images/glyphicons/icons/png/glyphicons-282-bullets.png);
+}
+
+.traq-accordian-header .x-panel-header-title-default>.x.title-text-default {
+	text-transform: none;
+	padding-left: 10px !important;
+}
+
+.logo_colour{
+	font-weight: bold;
+	color: rgb(52,180,209) !important;
+}

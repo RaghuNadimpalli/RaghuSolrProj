@@ -1,0 +1,2 @@
+mvn install:install-file -Dfile=E:\GITWorkspace\CommonComponents\target\CommonComponents-1.0.jar -DgroupId=figs -DartifactId=commoncomponents -Dversion=1.0 -Dpackaging=jar
+mvn package
