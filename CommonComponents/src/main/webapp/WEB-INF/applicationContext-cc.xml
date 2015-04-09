@@ -26,9 +26,9 @@
 		<import resource="cc-mvc.xml"/>
 		<import resource="cc-builder-scan.xml"/>
 		<import resource="datasource.xml"/>
-		<import resource="spring-security.xml"/>
-		<import resource="export-views.xml"/>
-		<import resource="solr-mvc.xml"/>
+<!-- 		<import resource="spring-security.xml"/> -->
+<!-- 		<import resource="export-views.xml"/> -->
+<!-- 		<import resource="solr-mvc.xml"/> -->
 		
     	<bean id="jacksonMessageConverter"
     		class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"></bean>

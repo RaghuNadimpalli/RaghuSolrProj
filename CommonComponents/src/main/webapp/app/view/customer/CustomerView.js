@@ -14,15 +14,15 @@ Ext.define('MyApp.view.customer.CustomerView', {
 	    config: {
 	    	tpl: new Ext.XTemplate(
 	    			'<div class="borderless"> <div class="panel-body">',
-	    			'<tpl for="."',
+	    			'<tpl for=".">',
 	    			'<tpl if="xindex === 1">',
 	    			'<br>',
 	    			'</tpl>',
-	    			'<tpl if="this.isNewRow() || xindex === 1>',
+	    			'<tpl if="this.isNewRow() || xindex === 1">',
 	    			'<div class="row">',
 	    			'</tpl>',
 	    			'<div class="col-lg-4">',
-	    			'<div class="pane; panel-default">',
+	    			'<div class="panel panel-default">',
 	    			'<div class="panel-heading">',
 	    			'<h3 class="panel-title">Search Result</h3>',
 	    			'</div>',
@@ -37,7 +37,7 @@ Ext.define('MyApp.view.customer.CustomerView', {
 	    			'</tpl>',
 	    			'</tpl>','</div></div>',{
 	    				isNewRow : function(index){
-	    					if(this.localIndex >- 2){
+	    					if(this.localIndex >= 2){
 	    						this.localIndex = 0;
 	    						console.log("returning true "+this.localIndex);
 	    						return true;

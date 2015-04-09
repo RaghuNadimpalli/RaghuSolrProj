@@ -11,6 +11,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 import com.raghunadimpalli.cc.core.components.DefaultComponentParams;
 import com.raghunadimpalli.cc.core.components.DefaultComponentResponse;
 import com.raghunadimpalli.cc.core.constants.MVCContants;
+import com.raghunadimpalli.cc.core.exceptions.ApplicationException;
 import com.raghunadimpalli.common.core.abstracts.ComponentBuilderResolver;
 import com.raghunadimpalli.common.core.abstracts.ComponentParams;
 import com.raghunadimpalli.common.core.abstracts.ComponentResponse;
@@ -50,7 +51,7 @@ public class DefaultPDFReportView extends AbstractPdfView {
 	@Override
 	protected void buildPdfDocument(Map<String, Object> model,
 			Document document, PdfWriter writer, HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
+			HttpServletResponse response) throws ApplicationException {
 		// TODO Auto-generated method stub
 		
 		String actionServiceIdentifier = MVCComponentHelper.getActionServiceIdentifier(request);

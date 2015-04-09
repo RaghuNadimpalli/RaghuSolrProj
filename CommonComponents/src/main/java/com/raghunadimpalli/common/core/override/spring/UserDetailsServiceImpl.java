@@ -14,6 +14,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 @SuppressWarnings("deprecation")
 public class UserDetailsServiceImpl implements AuthenticationUserDetailsService<Authentication> {
 	
+	@Override
 	public UserDetails loadUserDetails(Authentication token) throws UsernameNotFoundException{
 		
 		UserDetails userDetails = null;

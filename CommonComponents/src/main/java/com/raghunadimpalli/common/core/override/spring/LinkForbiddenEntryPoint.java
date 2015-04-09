@@ -11,12 +11,13 @@ import org.springframework.security.web.AuthenticationEntryPoint;
 
 public class LinkForbiddenEntryPoint implements AuthenticationEntryPoint{
 	
+	@Override
 	public void commence(HttpServletRequest request,
 			HttpServletResponse response, AuthenticationException authException)
 			throws IOException, ServletException{
 		HttpServletResponse httpResponse = (HttpServletResponse) response;
 		//httpResponse.sendRedirect("logout.jsp");
 		//httpResponse.sendRedirect("/rainstar2-webapp/authError.xhtml");
-		response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
+		response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unautoarized");
 	}
 }

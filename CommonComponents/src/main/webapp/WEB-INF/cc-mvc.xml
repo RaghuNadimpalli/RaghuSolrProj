@@ -25,7 +25,11 @@
 		http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
 		
 		<context:annotation-config/>
-		<mvc:annotation-driven/>
+		<mvc:annotation-driven content-negotiation-manager="contentNegotiationManager"></mvc:annotation-driven>
+		<bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+			<!-- Turn off working out content type based on URL file extension, should fall back to looking at the Accept headers -->
+			<property name="favorPathExtension" value="false"></property>
+		</bean>
 		
     	<bean id="configurableComponentBuilderResolver"
     		class="com.raghunadimpalli.cc.core.components.DefaultComponentBuilderResolver"/>
@@ -37,21 +41,22 @@
 <!--     		<property name="order" value="0"/> -->
 <!--     	</bean> -->
     	
-    	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+<!--     	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
     		<property name="viewClass" value="org.springframework.web.servlet.view.Jstlview"/>
     		<property name="cache" value="false"/>
     		<property name="suffix" value=".jsp"/>
     		<property name="order">
     			<value>2</value>
     		</property>
-    	</bean>
+    	</bean>  
+-->
     	
     	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
     	</bean>
     	
-    	<bean id="componentController" class="com.raghunadimpalli.common.core.controllers.ComponentController">
+    	<bean name="componentController" class="com.raghunadimpalli.common.core.controllers.ComponentController">
     		<property name="componentBuilderResolver" ref="configurableComponentBuilderResolver"/>
-    		<property name="componentBuilderinterceptor" ref="componentBuilderInterceptor"/>
+    		<property name="componentBuilderInterceptor" ref="componentBuilderInterceptor"/>
     	</bean>
     	
     	<bean name="methodResolver" class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
@@ -61,8 +66,7 @@
     	<bean id="jacksonMessageConverter"
     		class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"></bean>
     		
-    	<bean
-    		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+    	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
     		<property name="messageConverters">
     			<list>
     				<ref bean="jacksonMessageConverter"/>

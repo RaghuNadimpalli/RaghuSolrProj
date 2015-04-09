@@ -17,6 +17,7 @@ public class UrlParameterAuthenticationFilter extends AbstractPreAuthenticatedPr
 		return true;
 	}
 	
+	@Override
 	protected Object getPreAuthenticatedCredentials(HttpServletRequest request){
 		String[] credentials = new String[2];
 		/*credentials[0] = request.getParameter("param1");

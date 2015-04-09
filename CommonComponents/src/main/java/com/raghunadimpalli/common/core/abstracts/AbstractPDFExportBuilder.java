@@ -27,7 +27,7 @@ public abstract class AbstractPDFExportBuilder<T> extends
 		return this.performActionPostProcessing(data, document,writer,t);
 	}
 	
-	public T performActionPreprocessing(List<?> data,Document document, PdfWriter writer, T t) {
+	protected T performActionPreprocessing(List<?> data,Document document, PdfWriter writer, T t) {
 		return t;
 	}
 	

@@ -25,29 +25,38 @@
 		http://www.springframework.org/schema/task/spring-task-3.2.xsd">
 		
 		<context:annotation-config/>
-		<mvc:annotation-driven/>
-		<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
-			<property name="order" value="0"></property>
-			<property name="mediaTypes">
-				<map>
-					<entry key="pdf" value="application/pdf"/>
-					<entry key="xlsx" value="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"/>
-				</map>
-			</property>
-			<property name="defaultViews">
-				<list>
-					<!-- PDF View -->
-					<bean class="com.raghunadimpalli.cc.core.export.DefaultPDFReportView">
-						<property name="componentBuilderResolver" ref="configurableComponentBuilderResolver"/>
-					</bean>
-					
-					<!-- XLSX "Excel" View -->
-					<bean name="mvcExcelExporter" class="com.raghunadimpalli.cc.core.export.DefaultExcelReportView">
-						<property name="componentBuilderResolver" ref="configurableComponentBuilderResolver"/>
-					</bean>
-				</list>
-			</property>
-			
-			<property name="ignoreAcceptHeader" value="true"/>
+		<context:component-scan base-package="com.ellora.garage.controller.*"></context:component-scan>
+		<mvc:annotation-driven content-negotiation-manager="contentNegotiationManager"></mvc:annotation-driven>
+		
+		<bean class="com.raghunadimpalli.cc.core.export.DefaultPDFReportView">
+			<property name="componentBuilderResolver" ref="configurableComponentBuilderResolver"/>
 		</bean>
+		
+		<!-- XLSX "Excel" View -->
+		<bean name="mvcExcelExporter" class="com.raghunadimpalli.cc.core.export.DefaultExcelReportView">
+			<property name="componentBuilderResolver" ref="configurableComponentBuilderResolver"/>
+		</bean>
+
+<!-- 		<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver"> -->
+<!-- 			<property name="order" value="0"></property> -->
+<!-- 			<property name="mediaTypes"> -->
+<!-- 				<map> -->
+<!-- 					<entry key="pdf" value="application/pdf"/> -->
+<!-- 					<entry key="xlsx" value="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"/> -->
+<!-- 				</map> -->
+<!-- 			</property> -->
+<!-- 			<property name="defaultViews"> -->
+<!-- 				<list> -->
+<!-- 					<bean class="com.raghunadimpalli.cc.core.export.DefaultPDFReportView"> -->
+<!-- 						<property name="componentBuilderResolver" ref="configurableComponentBuilderResolver"/> -->
+<!-- 					</bean> -->
+					
+<!-- 					<bean name="mvcExcelExporter" class="com.raghunadimpalli.cc.core.export.DefaultExcelReportView"> -->
+<!-- 						<property name="componentBuilderResolver" ref="configurableComponentBuilderResolver"/> -->
+<!-- 					</bean> -->
+<!-- 				</list> -->
+<!-- 			</property> -->
+			
+<!-- 			<property name="ignoreAcceptHeader" value="true"/> -->
+<!-- 		</bean> -->
 </beans>

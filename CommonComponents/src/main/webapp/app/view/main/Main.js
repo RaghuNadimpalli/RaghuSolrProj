@@ -7,7 +7,7 @@
 */
 Ext.define('MyApp.view.main.Main', {
 	extend: 'Ext.container.Container',
-	required: [
+	requires: [
 	           'MyApp.view.main.MainController',
 	           'MyApp.view.main.MainModel',
 	           'MyApp.view.layout.North',
@@ -61,7 +61,7 @@ Ext.define('MyApp.view.main.Main', {
         				 }]
         			 },{
         				 xtype: 'layout.center',
-        	        	 id : 'centerPanel',
+        	        	 id : 'centerPanel'
 	        	  }]
 	         }]		 
 	         },

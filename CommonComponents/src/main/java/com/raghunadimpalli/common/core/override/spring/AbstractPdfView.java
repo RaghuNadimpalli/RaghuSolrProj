@@ -35,7 +35,7 @@ public abstract class AbstractPdfView extends AbstractView {
 	
 	
 	@Override
-	protected final void renderMergedOutputModel(Map<String, Object> model, HttpServletRequest request, HttpServletResponse response) throws Exception
+	protected void renderMergedOutputModel(Map<String, Object> model, HttpServletRequest request, HttpServletResponse response) throws Exception
 	{
 		//IE workaround: write into byte array first
 		ByteArrayOutputStream baos = createTemporaryOutputStream();

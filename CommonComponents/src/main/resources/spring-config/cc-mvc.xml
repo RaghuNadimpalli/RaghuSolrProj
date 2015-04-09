@@ -49,7 +49,7 @@
     	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
     	</bean>
     	
-    	<bean id="componentController" class="com.raghunadimpalli.common.core.controllers.ComponentController">
+    	<bean name="componentController" class="com.raghunadimpalli.common.core.controllers.ComponentController">
     		<property name="componentBuilderResolver" ref="configurableComponentBuilderResolver"/>
     		<property name="componentBuilderinterceptor" ref="componentBuilderInterceptor"/>
     	</bean>

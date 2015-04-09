@@ -264,7 +264,7 @@ public class ComponentController {
 	
 	@RequestMapping(params="delete")
 	public @ResponseBody ModelAndView delete(@RequestBody String jsonData, HttpServletRequest request,
-				HttpServletResponse response) throws Exception{
+				HttpServletResponse response) throws ApplicationException{
 		try{
 			ComponentResponse createResult = null;
 			ComponentParams params = null;
@@ -279,7 +279,7 @@ public class ComponentController {
 			}
 			return getModelMap(createResult);
 		}
-		catch(Exception e){
+		catch(ApplicationException e){
 			e.printStackTrace();
 			if(log.isDebugEnabled()){
 				log.debug("Exception while performing insert operation");
@@ -357,7 +357,7 @@ public class ComponentController {
 			ModelAndView modelMap = new ModelAndView();
 			modelMap.setView(new MappingJacksonJsonView());
 			if(operationResult.isResponseAvailable()){
-				modelMap.addObject("dataObj",operationResult.getResponseParameters());
+				modelMap.addObject("dataobj",operationResult.getResponseParameters());
 			}
 			modelMap.addObject("success", operationResult.getExecutionStatus());
 			modelMap.addObject("message", operationResult.getExecutionMessage());

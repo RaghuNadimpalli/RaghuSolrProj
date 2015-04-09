@@ -5,14 +5,14 @@ Ext.define('MyApp.view.layout.West', {
 	alias: 'widget.layout.west',
 	/*bind: {
 	 	title : '{name}'
-	 }*/
+	 },*/
 	title : 'TRAQs',
 	id : 'westPanel',
 	collapseMode: 'mini',
 	region: 'west',
 	collapsible : true,
 	width: 250,
-	layout: 'accordin',
+	layout: 'accordion',
 	listeners:{
 		collapse : function(panel, direction) {
 			var tabElement = panel.getPlaceholder().getComponent(1);
@@ -32,7 +32,7 @@ Ext.define('MyApp.view.layout.West', {
 					listeners: {
 						click:function(button, e){
 							e.stopEvent();
-							Ext.getCmp('westPanel').expand();
+							Ext.Msg.alert('Button', 'Click!');
 							e.stopEvent();
 						}
 					}
@@ -76,8 +76,8 @@ Ext.define('MyApp.view.layout.West', {
 	},{
 		title: 'Filter 2',
 		cls : 'traq-accordian-header',
-		iconCls : 'accordianAlignement bullets',
-		html: 'Empty'
+		html: 'Empty',
+		iconCls : 'accordianAlignement bullets'
 	}],
 	initComponent: function(){
 		var me = this;

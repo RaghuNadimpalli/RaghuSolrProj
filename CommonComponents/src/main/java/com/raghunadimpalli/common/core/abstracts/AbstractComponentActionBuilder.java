@@ -4,9 +4,10 @@ import com.raghunadimpalli.cc.core.exceptions.ApplicationException;
 
 public abstract class AbstractComponentActionBuilder<T> implements ComponentActionBuilder<T> {
 
+	@Override
 	public T doAction(ComponentParams params, T t) throws ApplicationException{
 		t = this.performActionPreprocessing(params, t);
-		t = this.performActionPostProcessing(params, t);
+		t = this.performAction(params, t);
 		return this.performActionPostProcessing(params, t);
 	}
 	

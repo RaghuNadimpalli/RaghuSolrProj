@@ -10,7 +10,7 @@
 		<http create-session="never" use-expressions="true" auto-config="false"
 			entry-point-ref="preAuthenticatedProcessingFilterEntryPoint">
 			<intercept-url pattern="/authError.xhtml" access="permitAll"/>			
-			 <intercept-url pattern="*.html" access="hasRole('ROLE_USER')"/>
+			 <intercept-url pattern="/**" access="hasRole('ROLE_USER')"/>
 			 <custom-filter position="PRE_AUTH_FILTER" ref="preAuthFilter"/>
 			 <session-management session-fixation-protection="none"/>
 		</http>

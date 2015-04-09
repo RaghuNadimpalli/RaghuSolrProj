@@ -12,6 +12,7 @@ public class SolrXMLResponse {
 		this.xmlString = xmlString;
 	}
 	
+	@Override
 	public String toString(){
 		return "SolrXMLResponse [xmlString="+xmlString+"]";
 	}

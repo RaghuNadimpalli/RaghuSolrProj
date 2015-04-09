@@ -26,8 +26,7 @@ public class BuilderResolverDelegator implements ComponentBuilderResolver{
 	}
 	
 	@Override
-	public ComponentActionBuilder resolveActionBuilder(String componentId,
-			ComponentParams params) throws ApplicationException{
+	public ComponentActionBuilder resolveActionBuilder(String componentId,ComponentParams params) throws ApplicationException{
 		ComponentActionBuilder result = internalResolver.resolveActionBuilder(componentId, params);
 		return result;
 	}
