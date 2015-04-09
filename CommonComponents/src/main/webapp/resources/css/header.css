@@ -1,0 +1,53 @@
+.header h1 {font-weight: bold;font-size: 1.5em; display: inline-block; margin:0 0 0 5px;line-height:.3em;padding-left: 20px;vertical-align: middle;}
+.header img {height:40px; vertical-align:middle;display: inline-block;}
+.studentinfo {
+	width: 400px;
+	padding: 5px 5px 5px 5px;
+	margin: 5px 5px 5px 5px;
+	border: 1px solid blue;
+}
+
+.studentinfo br {
+	clear: both;
+}
+
+.label {
+	float: left;
+	width: 100px;
+	font-weight: bold;
+	color: black;
+}
+
+.heading{
+	float: left;
+	width: 200px;
+	font-weight: bold;
+	margin: 5px 5px 5px 5px;
+}
+
+.borderless{
+	border-width: 0;
+}
+
+.accordianAlignment{
+	border-radius: 3px;
+	padding: 3px 3px 3px 3px;
+	border-width: 1px;
+	border-style: solid;
+	background-color: #3892d3;
+	border-color: #157fcc;
+	width: 26px !important;
+	height: 26px !important;
+}
+
+.person{
+	background-image: url(../images/glyphicons/icons/png/glyphicons-44-group.png);
+}
+.bullets{
+	background-image: url(../images/glyphicons/icons/png/glyphicons-282-bullets.png);
+}
+
+.traq-accordian-header .x-panel-header-title-default>.x.title-text-default {
+	text-transform: none;
+	padding-left: 10px !important;
+}

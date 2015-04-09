@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xmlns:jms="http://www.springframework.org/schema/jms"
+		xmlns:p="http://www.springframework.org/schema/p" 
+		xmlns:aop="http://www.springframework.org/schema/aop" 
+		xmlns:context="http://www.springframework.org/schema/context" 
+		xmlns:jee="http://www.springframework.org/schema/jee" 
+		xmlns:tx="http://www.springframework.org/schema/tx" 
+		xmlns:task="http://www.springframework.org/schema/task"
+		xmlns:mvc="http://www.springframework.org/schema/mvc"  
+		xsi:schemaLocation="http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-3.2.xsd 
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-3.2.xsd 
+		http://www.springframework.org/schema/jee 
+		http://www.springframework.org/schema/jee/spring-jee-3.2.xsd 
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx-3.2.xsd 
+		http://www.springframework.org/schema/task 
+		http://www.springframework.org/schema/task/spring-task-3.2.xsd
+		http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+		
+		<context:annotation-config/>
+		<mvc:annotation-driven/>
+		
+    	<bean id="configurableComponentBuilderResolver"
+    		class="com.raghunadimpalli.cc.core.components.DefaultComponentBuilderResolver"/>
+    	
+<!--     	<bean class="org.springframework.web.servlet.view.XMLViewResolver"> -->
+<!--     		<property name="location"> -->
+<!--     			<value>classpath:spring-config/export-views.xml</value> -->
+<!--     		</property>	 -->
+<!--     		<property name="order" value="0"/> -->
+<!--     	</bean> -->
+    	
+    	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    		<property name="viewClass" value="org.springframework.web.servlet.view.Jstlview"/>
+    		<property name="cache" value="false"/>
+    		<property name="suffix" value=".jsp"/>
+    		<property name="order">
+    			<value>2</value>
+    		</property>
+    	</bean>
+    	
+    	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    	</bean>
+    	
+    	<bean id="componentController" class="com.raghunadimpalli.common.core.controllers.ComponentController">
+    		<property name="componentBuilderResolver" ref="configurableComponentBuilderResolver"/>
+    		<property name="componentBuilderinterceptor" ref="componentBuilderInterceptor"/>
+    	</bean>
+    	
+    	<bean name="methodResolver" class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+    		<property name="defaultMethodName" value="defaultRequestHandler"/>
+    	</bean>
+    	
+    	<bean id="jacksonMessageConverter"
+    		class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"></bean>
+    		
+    	<bean
+    		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+    		<property name="messageConverters">
+    			<list>
+    				<ref bean="jacksonMessageConverter"/>
+    			</list>
+    		</property>
+    	</bean>
+    	
+    	<alias alias="componentBuilderInterceptor" name="jcaComponentBuilderInterceptor"/>
+    	<bean id="jcaComponentBuilderInterceptor" class="com.raghunadimpalli.cc.core.components.DefaultComponentBuilderInterceptor"/>	
+    	<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+
+</beans>
