@@ -46,8 +46,8 @@ Ext.define('MyApp.view.common.daterange.DateRange',{
 			fieldLabel: 'End Date',
 			name: 'enddt',
 			itemId: 'enddt',
-			vtype: 'daterange',
 			allowBlank: false,
+			vtype: 'daterange',
 			startDateField: 'startdt' //id of the start date field
 		}],
 		buttons: [

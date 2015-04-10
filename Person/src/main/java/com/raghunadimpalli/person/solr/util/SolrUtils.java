@@ -67,7 +67,7 @@ public class SolrUtils implements solrConstants {
 		if(dateRange != null){
 			inputData.setFromDate(getFromDate(dateRange));
 			inputData.setToDate(getToDate(dateRange));
-			inputData.setBusinessDateFilterForSolr(dateFilter(inputData.getFromDate(), inputData.getToDate()));
+			inputData.setModifiedDateFilterForSolr(dateFilter(inputData.getFromDate(), inputData.getToDate()));
 		}
 		return inputData;
 	}
@@ -75,18 +75,26 @@ public class SolrUtils implements solrConstants {
 	private String formatSearchString(String searchString)
 	{
 		String formattedStr = "";
-		if(searchString.indexOf("%20") > -1
-				|| searchString.indexOf(" ") > -1){
-			formattedStr = "\""+searchString+"\"";
-			formattedStr = replaceSpaces(formattedStr);
+		try
+		{
+			searchString = URLDecoder.decode(searchString, "UTF-8");
+			if(searchString.indexOf("%20") > -1
+					|| searchString.indexOf(" ") > -1){
+				formattedStr = "\""+searchString+"\"";
+				formattedStr = replaceSpaces(formattedStr);
+			}
+			else{
+				formattedStr = searchString;
+			}
 		}
-		else{
-			formattedStr = searchString;
+		catch (UnsupportedEncodingException e)
+		{
+			e.printStackTrace();
 		}
 		return formattedStr;
 	}
 	
-	private static String replaceSpaces(String str)
+	public static String replaceSpaces(String str)
 	{
 		StringBuffer strBuffer = new StringBuffer();
 		for(int i = 0;i < str.length(); i++)
@@ -135,14 +143,14 @@ public class SolrUtils implements solrConstants {
 	public PersonInputVO mapParamsToInputExcel(ComponentParams params, String searchType)
 	{
 		PersonInputVO inputData = new PersonInputVO();
-		String dateRange = replaceSpaces((String) params.getParameter("searchParam"));
+		String dateRange = replaceSpaces((String) params.getParameter("dateRange"));
 		inputData.setDateRange(dateRange);
 		inputData.setSearchString(formatSearchString((String) params.getParameter("searchParam")));
 		inputData.setSearchType(searchType);
 		if(dateRange != null){
 			inputData.setFromDate(getFromDate(dateRange));
 			inputData.setToDate(getToDate(dateRange));
-			inputData.setBusinessDateFilterForSolr(dateFilter(inputData.getFromDate(), inputData.getToDate()));
+			inputData.setModifiedDateFilterForSolr(dateFilter(inputData.getFromDate(), inputData.getToDate()));
 		}
 		return inputData;
 	}
@@ -162,7 +170,14 @@ public class SolrUtils implements solrConstants {
 			}
 			else
 			{
-				fromDate = DateUtils.addMonths(currentDate, -(Integer.parseInt(dateRange)));
+				if(dateRange.equals("100"))
+				{
+					fromDate = null;
+					SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
+					fromDate = formatter.parse(ALLFROMDATE);
+				}
+				else
+					fromDate = DateUtils.addMonths(currentDate, -(Integer.parseInt(dateRange)));
 			}
 		}
 		catch(Exception e)

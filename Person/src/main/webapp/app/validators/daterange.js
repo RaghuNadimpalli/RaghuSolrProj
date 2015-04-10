@@ -22,7 +22,7 @@ Ext.define('MyApp.validators.daterange', {
 		}
 		/*
 		 * Always return true since we're only using this vtype to set the
-		 * min/max allowed values (these are tested for after the vtype test)f
+		 * min/max allowed values (these are tested for after the vtype test)
 		 */
 		
 		

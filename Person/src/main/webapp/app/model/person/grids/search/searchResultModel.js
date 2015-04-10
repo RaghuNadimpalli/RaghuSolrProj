@@ -1,6 +1,7 @@
 Ext.define('MyApp.model.person.grids.search.searchResultModel', {
 	extend: 'MyApp.model.abstract.BaseModel',
-	requires: ['MyApp.model.abstract.BaseModel'
+	requires: [
+	        'MyApp.model.abstract.BaseModel'
 	],
 	
 	fields: [

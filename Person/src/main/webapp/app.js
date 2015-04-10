@@ -11,13 +11,13 @@ Ext.application({
 	autoCreateViewport: 'MyApp.view.main.Main',
 	
  //-------------------------------------------------------------------------
-    // Most customizations should be made to PersonWebApp.Application. If you need to
+    // Most customizations should be made to MyApp.Application. If you need to
     // customize this file, doing so below this section reduces the likelihood
     // of merge conflicts when upgrading to new versions of Sencha Cmd.
     //-------------------------------------------------------------------------
 
 	launch: function () {
-		Ext.util.Format.thousandSeperator = ',';
+		Ext.util.Format.thousandSeparator = ',';
 		console.log("alert from app");
 //		Ext.create('Ext.container.Viewport', {
 //          layout: 'fit',

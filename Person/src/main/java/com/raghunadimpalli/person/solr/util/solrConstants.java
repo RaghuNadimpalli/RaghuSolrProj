@@ -19,13 +19,18 @@ public interface solrConstants {
 	String HTML_SPACE = "&nbsp;";
 	String BLANK = "";
 	String AMPERSAND = "&";
-	String ASTRERIX = "\\*";
+	String ASTERIX = "\\*";
 	String SPACE = " ";
 	String PIPE = "|";
 	String NULL = "NULL";
 	
 	String ASC = "ASC";
 	String DESC = "DESC";
+	
+	int ALLFROMYEAR = 2011;
+	int ALLFROMMONTH = 11;
+	int ALLFROMDAY = 11;
+	String ALLFROMDATE = ALLFROMYEAR + "/" + ALLFROMMONTH + "/" + ALLFROMDAY;
 	
 	String[] EXCEL_HEADER_FIELDS = {
 			"Type", "Title", "First Name", "Middle Name","Last Name","Suffix","Email Promotion","Additional Info","Modified Date"

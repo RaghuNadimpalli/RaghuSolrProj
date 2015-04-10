@@ -50,12 +50,12 @@ public class PersonDetailsBuilder extends AbstractComponentDataBuilder<Map<Strin
 		if(dataType == null)
 		{
 			String uniqueId = (String) paramMap.get("name");
-			details = personSolr.getExtendedDetailsOfRecords(uniqueId, searchString);
+			details = personSolr.getExtendedDetailsOfRecords(uniqueId, searchString, params);
 		}
 		else if(dataType.equals("export"))
 		{
-			String uniqueId = (String) paramMap.get("id");
-			details = personSolr.getExtendedDetailsOfExportRecords(uniqueId);
+			String uniqueId = (String) params.getParameter("id");
+			details = personSolr.getExtendedDetailsOfExportRecords(uniqueId, params);
 		}	
 		
 		Map<String, String> personDetailInfo = new HashMap<String, String>();

@@ -16,7 +16,7 @@ Ext.define('MyApp.view.person.grids.searcgGrid', {
 	},
 	
 	listeners: {
-		viewready: mvcHelper.enablCopyPaste
+		viewready: mvcHelper.enableCopyPaste
 	},
 	
 	loadMask: true,
@@ -24,7 +24,7 @@ Ext.define('MyApp.view.person.grids.searcgGrid', {
 	bodyPadding: '15 0 0',
 	
 	selModel:{
-		prunRemoved: false
+		pruneRemoved: false
 	},
 	multiSelect: true,
 	
@@ -136,8 +136,7 @@ Ext.define('MyApp.view.person.grids.searcgGrid', {
 						gridFunc.contextMenu.showAt(e.getXY());
 						return false;
 					},
-					refresh : function (dataview)
-					{
+					refresh : function (dataview) {
 						Ext.each(dataview.panel.columns, function (column){
 							if(column.autoSizeColumn === true)
 								column.autoSize();

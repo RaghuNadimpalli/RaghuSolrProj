@@ -9,10 +9,10 @@ Ext.define('MyApp.store.person.grids.search.searchCriteriaStore',{
 	pageSize: 100,
 	extraParams: {},
 	proxy: {
-		// load using script tags for cross domain, if the data is on the same domain as
+		// load using script tags for cross domain, if the data in on the same domain as
 		// this page, an Ajax proxy would be better
 		type: 'ajax',
-		url: 'data.html?view=true&compid=mvc.persondetails',
+		url: 'data.html?view=true&compId=mvc.persondetails',
 		headers: {
 			'Content-Type' : 'application/json;charset=utf-8'
 		},
@@ -44,7 +44,7 @@ Ext.define('MyApp.store.person.grids.search.searchCriteriaStore',{
 			}
 		},
 		
-		//This particular service cannot spot on more than one field, so if grouped, disable sorting
+		//This particular service cannot sort on more than one field, so if grouped, disable sorting
 		groupchange: function(store, groupers){
 			var sortable = !store.isGrouped(),
 				headers = grid.headerCt.getVisibleGridColumns(),
@@ -55,7 +55,7 @@ Ext.define('MyApp.store.person.grids.search.searchCriteriaStore',{
 			}
 		},
 		
-		//This particular service cannot spot on more than one field, so if grouped, disable sorting
+		//This particular service cannot sort on more than one field, so if grouped, disable sorting
 		beforeprefetch: function(store, operation) {
 			if(operation.getGrouper()) {
 				operation.setSorters(null);

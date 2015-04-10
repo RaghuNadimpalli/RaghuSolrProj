@@ -11,6 +11,7 @@ import org.apache.solr.client.solrj.response.QueryResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.raghunadimpalli.cc.core.solr.SolrUrlFactory;
+import com.raghunadimpalli.common.core.abstracts.ComponentParams;
 import com.raghunadimpalli.person.solr.PersonSolr;
 import com.raghunadimpalli.person.solr.util.SolrUtils;
 import com.raghunadimpalli.person.solr.util.solrConstants;
@@ -64,7 +65,7 @@ public class PersonSolrImpl implements PersonSolr, solrConstants {
 	}
 	
 	@Override
-	public Map<String, Object> getBasicSearchResults(PersonInputVO inputVO)
+	public Map<String, Object> getBasicSearchResults(PersonInputVO inputVO, ComponentParams params)
 	{
 		Map<String, Object> solrDataMap = new HashMap(); 
 		List<PersonBasicVO> personBasicList;
@@ -134,7 +135,7 @@ public class PersonSolrImpl implements PersonSolr, solrConstants {
 	
 	
 	@Override
-	public Map<String, Object> getBasicExcelResults(PersonInputVO inputVO)
+	public Map<String, Object> getBasicExcelResults(PersonInputVO inputVO, ComponentParams params)
 	{
 		Map<String, Object> solrDataMap = new HashMap(); 
 		List<PersonBasicVO> personExportList;
@@ -172,7 +173,7 @@ public class PersonSolrImpl implements PersonSolr, solrConstants {
 	}
 	
 	@Override
-	public PersonExtendedVO getExtendedDetailsOfRecords(String uniqueId, String searchString)
+	public PersonExtendedVO getExtendedDetailsOfRecords(String uniqueId, String searchString, ComponentParams params)
 	{
 		PersonExtendedVO details = new PersonExtendedVO();
 		List<PersonExtendedVO> personDetailsList;
@@ -198,7 +199,7 @@ public class PersonSolrImpl implements PersonSolr, solrConstants {
 		return details;
 	}
 	
-	public PersonExtendedVO getExtendedDetailsOfExportRecords(String uniqueId)
+	public PersonExtendedVO getExtendedDetailsOfExportRecords(String uniqueId, ComponentParams params)
 	{
 		PersonExtendedVO details = new PersonExtendedVO();
 		List<PersonExtendedVO> personDetailsList;

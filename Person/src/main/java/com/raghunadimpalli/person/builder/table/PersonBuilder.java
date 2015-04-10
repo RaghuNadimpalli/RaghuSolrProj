@@ -48,7 +48,7 @@ public class PersonBuilder extends AbstractComponentDataBuilder<PersonBasicVO> i
 		if(dataType.equals("Grid"))
 		{
 			PersonInputVO inputData = solrUtils.mapParamsToInput(params, BASIC_UI_SEARCH);
-			solrDataMap = personSolr.getBasicSearchResults(inputData);
+			solrDataMap = personSolr.getBasicSearchResults(inputData,params);
 			serviceList = (List<PersonBasicVO>) solrDataMap.get("DataList");
 			long numRecords = (long) solrDataMap.get("numRecords");
 			params.setTotalCount(numRecords);
@@ -56,11 +56,16 @@ public class PersonBuilder extends AbstractComponentDataBuilder<PersonBasicVO> i
 		else if(dataType.equals("Excel"))
 		{
 			PersonInputVO inputData = solrUtils.mapParamsToInput(params, EXCEL_BASIC_UI_SEARCH);
-			solrDataMap = personSolr.getBasicExcelResults(inputData);
+			solrDataMap = personSolr.getBasicExcelResults(inputData,params);
 			serviceList = (List<PersonBasicVO>) solrDataMap.get("DataList");
 			long numRecords = (long) solrDataMap.get("numRecords");
 			params.setTotalCount(numRecords);
 		}
 		return serviceList;
 	}
+	
+//	@Override
+//	public Class<?> getComponentDataTransferObject() {
+//		return Custmo
+//	}
 }

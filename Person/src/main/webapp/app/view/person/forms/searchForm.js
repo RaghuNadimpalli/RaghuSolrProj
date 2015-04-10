@@ -27,8 +27,7 @@ Ext.define('MyApp.view.person.forms.searchForm', {
 			minWidth: 450,
 			enableKeyEvents: true,
 			listeners: {
-				specialkey: function(f,e)
-				{
+				specialkey: function(f,e){
 					if(e.getKey() == e.ENTER){
 						var searchBtn = Ext.getCmp('searchBtn');
 						searchBtn.fireEvent('click',searchBtn);

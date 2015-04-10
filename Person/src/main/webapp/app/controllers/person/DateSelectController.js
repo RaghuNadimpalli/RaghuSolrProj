@@ -1,6 +1,6 @@
 Ext.define('MyApp.controllers.person.DateSelectController', {
 	extend: 'Ext.app.ViewController',
-	alias: 'controller.dataselect',
+	alias: 'controller.dateselect',
 	
 	onDateSelect : function(button) {
 		var dateRange = button.up('form').getValues();
@@ -10,7 +10,7 @@ Ext.define('MyApp.controllers.person.DateSelectController', {
 		button.up('window').destroy();
 	},
 	onCancel : function(button){
-		Ext.getCmp("dataSelector").fireEvent("boxready");
+		Ext.getCmp("dateSelector").fireEvent("boxready");
 		button.up('window').destroy();
 	}
 });

@@ -33,7 +33,7 @@ Ext.define('MyApp.view.main.MainModel', {
 				'</ul>'+
 			'</div>'+
 			'</nav>'+
-			'</br></br>'+
+			'<br></br>'+
 			'<hr>'
 	}
 });

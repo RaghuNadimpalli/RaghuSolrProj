@@ -5,14 +5,14 @@ Ext.define('MyApp.view.layout.West', {
 	alias: 'widget.layout.west',
 	/*bind: {
 	 	title : '{name}'
-	 }*/
+	 },*/
 	title : this.title,
 	id : 'westPanel',
 	collapseMode: 'mini',
 	region: 'west',
 	collapsible : true,
 	width: 250,
-	layout: 'accordin',
+	layout: 'accordion',
 	listeners: this.listeners,
 	
 	/*tbar: [{

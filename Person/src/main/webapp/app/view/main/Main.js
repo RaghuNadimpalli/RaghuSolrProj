@@ -3,11 +3,11 @@
 * "autoCreateViewport" property. That setting automatically applies the "viewport"
 * plugin to promote that instance of this class to the body element.
 * 
-* TODO - Replace the content of this view to suite the needs of your application.
+* TODO - Replace this content of this view to suite the needs of your application.
 */
 Ext.define('MyApp.view.main.Main', {
 	extend: 'Ext.container.Container',
-	required: [
+	requires: [
 	           'MyApp.view.main.MainController',
 	           'MyApp.view.main.MainModel',
 	           'MyApp.view.layout.North',
@@ -49,7 +49,7 @@ Ext.define('MyApp.view.main.Main', {
 					 bind: {
 						 html:'{headerHTML}'
 					 },
-					 //html: this.headerHTML,
+					 //html: this.headerHtml,
 					 cls: 'header',
 					 border: false,
 				 }]
@@ -91,7 +91,7 @@ Ext.define('MyApp.view.main.Main', {
 	        						 type: 'searchCriteriaStore'
 	        					 },
 	        					 minChars: 0,
-	        					 queryModel: 'local',
+	        					 queryMode: 'local',
 	        					 listeners: {
 	        						 select: 'onDateRangeChange',
 	        						 boxready: function(){
@@ -109,7 +109,8 @@ Ext.define('MyApp.view.main.Main', {
 	        					 },
 	        					 margins: '0 0 0 20',
 	        					 padding: '0 0 0 20'
-	        				 }]
+	        				 }
+	        				]
 	        			 }],
 	        			 //border : false,
 	        			 items: [{

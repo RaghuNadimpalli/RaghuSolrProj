@@ -58,7 +58,7 @@ mvcHelper.enableCopyPaste = function(grid){
 	}
 }
 
-mvcHelper,submitExportRequest = function(compId,actnService,exportFormat,params){
+mvcHelper.submitExportRequest = function(compId,actnService,exportFormat,params){
 	if(!mvcHelper.isGoodObject(exportFormat)){
 		Ext.MessageBox.alert('Error',"exportFormat is a required field to perform export action");
 		return;

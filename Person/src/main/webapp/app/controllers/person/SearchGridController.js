@@ -27,6 +27,6 @@ Ext.define('MyApp.controllers.person.SearchGridController', {
 		this.getViewModel().setData({cellValue : selectedCellValue});
 	},
 	getCellValue : function(){
-		return selectedCellValue
+		return selectedCellValue;
 	}
 });

@@ -1,7 +1,7 @@
 Ext.define('MyApp.controllers.person.SearchActionController', {
 	extend: 'Ext.app.ViewController',
 	alias: 'controller.searchActionController',
-	required: [
+	requires: [
 	           'MyApp.view.person.grids.searchGrid'
 	         ],
 	performSearch : function(){
@@ -49,14 +49,14 @@ Ext.define('MyApp.controllers.person.SearchActionController', {
 			icon : 'ext-js/build/packages/ext-theme-crisp/build/resources/images/grid/drop-yes.png',
 			text: 'Copy Cell Value',
 			disabled: false,
-			handler: 'OnCopyCellValue'
+			handler: 'onCopyCellValue'
 		});
 		var searchAction = Ext.create('Ext.Action', {
 			//icon : 'ext-js/build/packages/ext-theme-crisp/build/resources/images/grid/refresh.png',
 			icon : 'ext-js/build/packages/ext-theme-crisp/build/resources/images/grid/drop-yes.png',
 			text: 'Search With This Value',
 			disabled: false,
-			handler: 'OnSearchWithString'
+			handler: 'onSearchWithString'
 		});
 		return [searchAction]
 	}

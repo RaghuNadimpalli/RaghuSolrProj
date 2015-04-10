@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="resources\css\header.css">
 	
 	<script type="text/javascript" src="ext-js/build/bootstrap.js"></script>
-	<script type="text/javascript" src="ext-js/build/ext-all.js"></script>
+<!-- 	<script type="text/javascript" src="ext-js/build/ext-all.js"></script> -->
 	<script type="text/javascript" src="app.js"></script>
 </head>
 <body>

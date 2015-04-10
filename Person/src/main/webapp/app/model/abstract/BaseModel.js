@@ -3,4 +3,4 @@ Ext.define('MyApp.model.abstract.BaseModel', {
 	schema: {
 		namespace: 'person.basemodel'
 	}
-})
+});
