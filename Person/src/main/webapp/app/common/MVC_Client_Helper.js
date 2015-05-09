@@ -172,7 +172,7 @@ mvcHelper.hyperLinkClickHandler = function(id,custID){
 					dateRange : Ext.getCmp("dateSelector").getValue(),
 					id : id
 				}
-			},{
+			}/*,{
 				title: 'Extended Page',
 				name: 'detailed',
 				xtype : 'cc_info',
@@ -184,7 +184,7 @@ mvcHelper.hyperLinkClickHandler = function(id,custID){
 					dateRange : Ext.getCmp("dateSelector").getValue(),
 					id : id
 				}
-			}],
+			}*/],
 		}]
 	}).show();
 }

@@ -33,14 +33,14 @@ public interface solrConstants {
 	String ALLFROMDATE = ALLFROMYEAR + "/" + ALLFROMMONTH + "/" + ALLFROMDAY;
 	
 	String[] EXCEL_HEADER_FIELDS = {
-			"Type", "Title", "First Name", "Middle Name","Last Name","Suffix","Email Promotion","Additional Info","Modified Date"
+			"PersonId", "Type", "Title", "First Name", "Middle Name","Last Name","Suffix","Email Promotion","Additional Info","Modified Date"
 	};
 	
 	String[] EXCEL_DETAILS_HEADER_FIELDS = {
-			"Type", "Title", "First Name", "Middle Name","Last Name","Suffix","Email Promotion","Additional Info","Modified Date"
+			"PersonId", "Type", "Title", "First Name", "Middle Name","Last Name","Suffix","Email Promotion","Additional Info","Modified Date"
 	};
 	
 	String[] EXCEL_EXPANDED_DETAILS_HEADER_FIELDS = {
-			"Type", "Title", "First Name", "Middle Name","Last Name","Suffix","Email Promotion","Additional Info","Modified Date"
+			"PersonId", "Type", "Title", "First Name", "Middle Name","Last Name","Suffix","Email Promotion","Additional Info","Modified Date"
 	};		
 }

@@ -10,7 +10,7 @@ Ext.define('MyApp.store.person.forms.searchCriteriaStore',{
 	storeId: 'searchCriteriaStore',
 	
 	data: [
-	    [100, 'All'],
+	    [1000, 'All'],
 	    [3, 'Last Three Months'],
 	    [6, 'Last Six Months'],
 	    [12, 'Last Year'],

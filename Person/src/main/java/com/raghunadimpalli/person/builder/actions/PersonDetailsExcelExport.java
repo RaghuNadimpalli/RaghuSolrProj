@@ -77,6 +77,7 @@ public class PersonDetailsExcelExport extends AbstractExcelExportBuilder<Compone
 		row = sheet.createRow(rowCount);
 		
 		//numberFormat, text, dateFormat ---> Excel Formats
+		excelUtils.highlightSearchString(workbook, row, (short) ctr++, solrUtils.formatData(excelUtils.nullValueCheck(personDetailInfo.get("id"))), searchString, "center", "text");
 		excelUtils.highlightSearchString(workbook, row, (short) ctr++, solrUtils.formatData(excelUtils.nullValueCheck(personDetailInfo.get("type"))), searchString, "center", "text"); 
 		excelUtils.highlightSearchString(workbook, row, (short) ctr++, solrUtils.formatData(excelUtils.nullValueCheck(personDetailInfo.get("title"))), searchString, "center", "text");
 		excelUtils.highlightSearchString(workbook, row, (short) ctr++, solrUtils.formatData(excelUtils.nullValueCheck(personDetailInfo.get("firstName"))), searchString, "center", "text");

@@ -12,6 +12,17 @@ public class PersonBasicVO {
 	@Field("person_entityType")
 	private String entityType = "PersonEntity";
 	
+	@Field("personText_id")
+	private String personId;
+	
+	public String getPersonId() {
+		return personId;
+	}
+
+	public void setPersonId(String personId) {
+		this.personId = personId;
+	}
+
 	@Field("personText_type")
 	private String type;
 	

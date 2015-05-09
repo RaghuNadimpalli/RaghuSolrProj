@@ -54,6 +54,7 @@ public class PersonDetailsBuilder extends AbstractComponentDataBuilder<Map<Strin
 		}	
 		
 		Map<String, String> personDetailInfo = new HashMap<String, String>();
+		personDetailInfo.put("Id", details.getId());
 		personDetailInfo.put("Type", details.getType());
 		personDetailInfo.put("Title", details.getTitle());
 		personDetailInfo.put("FirstName", details.getFirstName());

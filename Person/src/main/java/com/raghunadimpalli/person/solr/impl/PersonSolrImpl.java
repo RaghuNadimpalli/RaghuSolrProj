@@ -183,7 +183,7 @@ public class PersonSolrImpl implements PersonSolr, solrConstants {
 		{
 			query = new SolrQuery();
 			query.setQuery("person_allSearchFields:"+searchString).
-			setFilterQueries("personText_id:"+uniqueId);
+			setFilterQueries("person_id:"+uniqueId);
 			
 			//QueryResponse rsp = solrServer.query(query);
 			QueryResponse rsp = this.solrFactory.getSolrServer("person").query(query);
@@ -207,7 +207,7 @@ public class PersonSolrImpl implements PersonSolr, solrConstants {
 		try
 		{
 			query = new SolrQuery();
-			query.setQuery("personText_id:"+uniqueId);
+			query.setQuery("person_id:"+uniqueId);
 			//QueryResponse rsp = solrServer.query(query);
 			QueryResponse rsp = this.solrFactory.getSolrServer("person").query(query);
 			personDetailsList = rsp.getBeans(PersonExtendedVO.class);

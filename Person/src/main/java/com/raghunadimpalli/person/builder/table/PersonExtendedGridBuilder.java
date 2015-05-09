@@ -54,6 +54,7 @@ public class PersonExtendedGridBuilder extends AbstractComponentDataBuilder<Map<
 //		}	
 		
 		Map<String, String> personDetailInfo = new HashMap<String, String>();
+		personDetailInfo.put("id", details.getId());
 		personDetailInfo.put("Type", details.getType());
 		personDetailInfo.put("Title", details.getTitle());
 		personDetailInfo.put("FirstName", details.getFirstName());
