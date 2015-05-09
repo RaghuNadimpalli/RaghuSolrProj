@@ -18,7 +18,7 @@ Ext.define('MyApp.view.main.MainModel', {
 					'<span class="icon-bar"></span>'+
 				'</button>'+
 				'<a class="navbar-brand header_logo" href="#">'+
-					'<img src="resoueces/images/header/barclays_logo.gif" alt="">'+
+					'<img src="resources/images/header/barclays_logo.jpg" alt="">'+
 				'</a>'+
 				'<hr>'+
 			'</div>'+

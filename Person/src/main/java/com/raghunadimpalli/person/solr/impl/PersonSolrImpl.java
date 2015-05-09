@@ -52,7 +52,7 @@ public class PersonSolrImpl implements PersonSolr, solrConstants {
 			query = new SolrQuery();
 			query.setQuery("*:*").
 			setRows(1);
-			query.setSort(solrUtils.getJavaFieldOnSolrField("modifiedDateText"), ORDER.desc);
+			query.setSort("personText_modifiedDateText", ORDER.desc);//solrUtils.getJavaFieldOnSolrField("modifiedDateText")
 			QueryResponse rsp = this.solrFactory.getSolrServer("person").query(query);
 			personDetailsList = rsp.getBeans(PersonExtendedVO.class);
 			PersonExtendedVO personVO = personDetailsList.get(0);
@@ -74,7 +74,7 @@ public class PersonSolrImpl implements PersonSolr, solrConstants {
 		{
 			query = new SolrQuery();
 			query.setQuery("person_allSearchFields:"+inputVO.getSearchString()).
-			setFilterQueries("personText_modifiedDate:["+inputVO.getModifiedDateFilterForSolr()+"]").
+			setFilterQueries("person_modifiedDate:["+inputVO.getModifiedDateFilterForSolr()+"]").
 			setStart(inputVO.getStartIndex()).
 			setRows(inputVO.getLimit()).
 			setHighlight(true).
@@ -86,9 +86,9 @@ public class PersonSolrImpl implements PersonSolr, solrConstants {
 			query.setParam("h1.highlightMultiTerm", true);
 			query.setParam("h1.useFastVectorHighligher", true);
 			query.setParam("h1.fragmenter", "regex");
-			query.setParam("h1.fragmenterBuilder", "colored");
+			query.setParam("h1.fragmentsBuilder", "colored");
 			query.setParam("h1.fragListBuilder", "simple");
-			query.setParam("h1.phaseLimit", "1000");
+			query.setParam("h1.phraseLimit", "1000");
 			query.setParam("h1.f1", "*");
 			query.setParam("h1.usePhraseHighlighter", true);
 			
@@ -144,7 +144,7 @@ public class PersonSolrImpl implements PersonSolr, solrConstants {
 		{
 			query = new SolrQuery();
 			query.setQuery("person_allSearchFields:"+inputVO.getSearchString()).
-			setFilterQueries("personText_modifiedDate:["+inputVO.getModifiedDateFilterForSolr()+"]").
+			setFilterQueries("person_modifiedDate:["+inputVO.getModifiedDateFilterForSolr()+"]").
 			setRows(5000);
 			
 			if(inputVO.getSortField() != null && !inputVO.getSortField().equals("threadid"))

@@ -48,8 +48,7 @@ Ext.define('MyApp.view.main.MainController', {
 	onDateRangeChange: function (combo,selection) {
 		if(combo.getValue() == 0){
 			Ext.create('MyApp.view.common.daterange.DateRange').show();
-		}
-		else{
+		}else{
 			this.getViewModel().setData({dateRangeString : ''});
 		}
 	},

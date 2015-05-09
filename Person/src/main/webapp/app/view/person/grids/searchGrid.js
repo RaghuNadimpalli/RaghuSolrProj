@@ -1,4 +1,4 @@
-Ext.define('MyApp.view.person.grids.searcgGrid', {
+Ext.define('MyApp.view.person.grids.searchGrid', {
 	extend: 'Ext.grid.Panel',
 	requires: [
 	          'MyApp.model.abstract.BaseModel',

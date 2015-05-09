@@ -11,8 +11,7 @@ Ext.define('MyApp.view.common.plugins.PanelHeaderTool', {
 	},
 	onAddIcons:function() {
 		this.header = this.panel.getHeader();
-		for(i=0;i<this.headerComponents.length;i++)
-		{
+		for(i=0;i<this.headerComponents.length;i++){
 			this.headerComponents[i].componentPosition ?
 				this.header.insert(this.headerComponents[i].componentPosition,this.headerComponents[i]):
 				this.header.add(this.headerComponents[i]);	

@@ -43,4 +43,4 @@ Ext.define('MyApp.view.person.infogrids.InfoGrid', {
 		});
 		me.callParent(arguments);
 	}
-})
+});

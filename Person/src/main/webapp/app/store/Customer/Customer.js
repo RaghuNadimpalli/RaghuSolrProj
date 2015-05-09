@@ -1,4 +1,5 @@
-Ext.define('MyApp.store.Customer.Customer', {
+Ext.define('MyApp.store.Customer.Customer', 
+{
 	extend: 'Ext.data.Store',
 	alias: 'store.custStore',
 	requires: [

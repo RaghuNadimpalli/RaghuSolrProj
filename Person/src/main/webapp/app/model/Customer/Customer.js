@@ -3,14 +3,14 @@ Ext.define('MyApp.model.Customer.Customer', {
 	idProperty:'Id',
 	fields: [
 	   {  name: 'Id', type:'int', defaultValue: 0},
-	   {  name: 'firstName', type:'String'},
-	   {  name: 'middleName', type:'String'},
-	   {  name: 'lastName', type:'String'},
+	   {  name: 'firstName', type:'string'},
+	   {  name: 'middleName', type:'string'},
+	   {  name: 'lastName', type:'string'},
 	   {  name: 'birthDate', type:'date'},
-	   {  name: 'address1', type:'String'},
-	   {  name: 'address2', type:'String'},
-	   {  name: 'city', type:'String'},
-	   {  name: 'state', type:'String'}
+	   {  name: 'address1', type:'string'},
+	   {  name: 'address2', type:'string'},
+	   {  name: 'city', type:'string'},
+	   {  name: 'state', type:'string'}
 	],
 	
 	validations: [{

@@ -39,7 +39,7 @@ public class PersonBasicVO {
 	@Field("personText_modifiedDateText")
 	private String modifiedDateText;
 	
-	@Field("personText_modifiedDate")
+	@Field("person_modifiedDate")
 	private Date modifiedDate;
 
 	public String getId() {
