@@ -100,11 +100,11 @@ public class ExcelUtils implements solrConstants {
 		Date dtSourceDate = new Date();
 		
 		if(alignStr.equals("left"))
-			cellStyle.setAlignment(cellStyle.ALIGN_LEFT);
+			cellStyle.setAlignment(CellStyle.ALIGN_LEFT);
 		else if(alignStr.equals("right"))
-			cellStyle.setAlignment(cellStyle.ALIGN_RIGHT);
+			cellStyle.setAlignment(CellStyle.ALIGN_RIGHT);
 		else
-			cellStyle.setAlignment(cellStyle.ALIGN_CENTER);
+			cellStyle.setAlignment(CellStyle.ALIGN_CENTER);
 		
 		if(formatType.equals("currency") && !cellValue.equals("")){
 			Double cellNum = Double.parseDouble(cellValue.replaceAll(",", ""));

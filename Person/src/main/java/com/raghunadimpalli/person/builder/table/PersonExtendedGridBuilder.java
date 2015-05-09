@@ -1,13 +1,11 @@
 package com.raghunadimpalli.person.builder.table;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
-import org.apache.solr.client.solrj.beans.Field;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -16,10 +14,7 @@ import com.raghunadimpalli.common.core.abstracts.AbstractComponentDataBuilder;
 import com.raghunadimpalli.common.core.abstracts.ComponentParams;
 import com.raghunadimpalli.person.solr.impl.PersonSolrImpl;
 import com.raghunadimpalli.person.solr.util.SolrUtils;
-import com.raghunadimpalli.person.solr.util.solrConstants;
-import com.raghunadimpalli.person.vo.PersonBasicVO;
 import com.raghunadimpalli.person.vo.PersonExtendedVO;
-import com.raghunadimpalli.person.vo.PersonInputVO;
 
 @Component("mvc.extendedInfoGrid")
 public class PersonExtendedGridBuilder extends AbstractComponentDataBuilder<Map<String, String>> {

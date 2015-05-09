@@ -52,7 +52,7 @@ public class PersonSolrImpl implements PersonSolr, solrConstants {
 			query = new SolrQuery();
 			query.setQuery("*:*").
 			setRows(1);
-			query.setSort("personText_modifiedDateText", ORDER.desc);//solrUtils.getJavaFieldOnSolrField("modifiedDateText")
+			query.setSort(solrUtils.getSolrFieldOnJavaField("modifiedDateText"), ORDER.desc);
 			QueryResponse rsp = this.solrFactory.getSolrServer("person").query(query);
 			personDetailsList = rsp.getBeans(PersonExtendedVO.class);
 			PersonExtendedVO personVO = personDetailsList.get(0);

@@ -113,9 +113,17 @@ public class SolrUtils implements solrConstants {
 		return strBuffer.toString();
 	}
 	
-	private static String removeSpaces(String str)
+	private static String removeSpacesForConcat(String str)
 	{
-		StringBuffer strBuffer = new StringBuffer();
+		try
+		{
+			str = URLDecoder.decode(str, "UTF-8");
+		}
+		catch (UnsupportedEncodingException e)
+		{
+			e.printStackTrace();
+		}
+		/*StringBuffer strBuffer = new StringBuffer();
 		for(int i = 0;i < str.length(); i++)
 		{
 			if(str.charAt(i) == '%'
@@ -126,6 +134,27 @@ public class SolrUtils implements solrConstants {
 				i++;
 			}
 			else{
+				strBuffer.append(str.charAt(i));
+			}
+		}*/
+		return str;//strBuffer.toString();
+	}
+	
+	public static String removeSpaces(String str)
+	{
+		StringBuffer strBuffer = new StringBuffer();
+		for(int i = 0; i < str.length(); i++)
+		{
+			if(str.charAt(i) == '%'
+					&& str.charAt(i+1) == '2'
+					&& str.charAt(i+2) == '0')
+			{
+				strBuffer.append("");
+				i++;
+				i++;
+			}
+			else
+			{
 				strBuffer.append(str.charAt(i));
 			}
 		}
