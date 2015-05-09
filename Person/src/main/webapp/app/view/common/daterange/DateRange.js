@@ -4,7 +4,7 @@ Ext.define('MyApp.view.common.daterange.DateRange',{
 	controller: 'dateselect',
 	requires: [
 	           'MyApp.validators.daterange',
-	           'MyApp.controllers.hornet.DateSelectController'
+	           'MyApp.controllers.person.DateSelectController'
 	],
 	height: 160,
 	width: 400,
@@ -52,7 +52,7 @@ Ext.define('MyApp.view.common.daterange.DateRange',{
 		}],
 		buttons: [
 		         {text:'Select', handler:'onDateSelect'},
-		         {text:'Cancel', handler:'onCancel'},
+		         {text:'Cancel', handler:'onCancel'}
 		        ]
 	}]
 });

@@ -5,7 +5,7 @@
 */
 Ext.define('MyApp.Application', {
 	extend: 'Ext.app.Application',
-	name: 'MyApp',
+	name:'MyApp',
 	stores: [
 	      'MyApp.store.person.grids.search.searchCriteriaStore'   
 	],

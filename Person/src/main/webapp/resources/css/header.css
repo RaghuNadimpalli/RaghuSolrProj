@@ -24,7 +24,7 @@ body.x-border-layout-ct, div.x-border-layout-ct {
 }
 
 .navbar-barclays {
-	background-color: #FFFFFF;
+	background-color: #ffffff;
 	border-bottom: 3px solid #34b4d1;
 	border-radius: 0px;
 }
@@ -54,7 +54,7 @@ excel_btn{
 }
 
 .x-tool-pdf_export{
-	background-image: url(../images/custom/pdf.jpg);
+	background-image: url(../images/custom/pdf.png);
 }
 
 .nav > li > a:hover, .nav > li > a:focus{
@@ -62,7 +62,7 @@ excel_btn{
 	background-color: #FFF !important;
 }
 
-.nav > li > a{
+.nav > li > a {
 	position: relative !important;
 	display: block !important;
 	/* padding: 10px 15px; overriden*/

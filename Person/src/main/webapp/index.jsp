@@ -8,7 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="resources\css\header.css">
 	
 	<script type="text/javascript" src="ext-js/build/bootstrap.js"></script>
-<!-- 	<script type="text/javascript" src="ext-js/build/ext-all.js"></script> -->
+<!-- 	<script type="text/javascript" charset="UTF-8" src="ext-js/build/ext-all-debug.js"></script> -->
+<!-- 	<script type="text/javascript" charset="UTF-8" src="app/common/MVC_Client_Helper.js"></script> -->
 	<script type="text/javascript" src="app.js"></script>
 </head>
 <body>

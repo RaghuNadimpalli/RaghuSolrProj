@@ -4,14 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-import com.itextpdf.text.pdf.PdfStructTreeController.returnType;
 import com.raghunadimpalli.cc.core.exceptions.ApplicationException;
 import com.raghunadimpalli.common.core.abstracts.AbstractComponentDataBuilder;
 import com.raghunadimpalli.common.core.abstracts.ComponentParams;
 import com.raghunadimpalli.common.dao.LandingInfo;
 import com.raghunadimpalli.person.solr.impl.PersonSolrImpl;
 
+@Component("mvc.landingInfo")
 public class LandingPageInfo extends AbstractComponentDataBuilder<LandingInfo> {
 	
 	@Autowired

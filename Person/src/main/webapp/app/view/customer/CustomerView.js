@@ -1,4 +1,5 @@
-Ext.define('MyApp.view.customer.CustomerView', {
+Ext.define('MyApp.view.customer.CustomerView', 
+{
 	extend: 'Ext.view.View',
 	alias: 'widget.CustomerDataView',
 	requires: [

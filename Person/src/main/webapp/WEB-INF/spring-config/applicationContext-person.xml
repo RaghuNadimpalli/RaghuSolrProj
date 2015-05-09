@@ -21,7 +21,7 @@
 		http://www.springframework.org/schema/task 
 		http://www.springframework.org/schema/task/spring-task-3.2.xsd">
 		
-		<context:annotation-config></context:annotation-config>
+		<context:annotation-config/>
 		<import resource="person-builder-scan.xml"/>
 		<import resource="person-solr-scan.xml"/>
 

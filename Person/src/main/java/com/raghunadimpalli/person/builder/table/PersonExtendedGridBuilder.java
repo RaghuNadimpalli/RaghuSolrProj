@@ -50,7 +50,7 @@ public class PersonExtendedGridBuilder extends AbstractComponentDataBuilder<Map<
 		if(dataType == null)
 		{
 			String uniqueId = (String) paramMap.get("name");
-			details = personSolr.getExtendedDetailsOfRecords(uniqueId, searchString);
+			details = personSolr.getExtendedDetailsOfRecords(uniqueId, searchString, params);
 		}
 //		else if(dataType.equals("export"))
 //		{
