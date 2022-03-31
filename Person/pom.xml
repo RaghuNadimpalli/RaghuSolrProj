@@ -8,7 +8,7 @@
   <description>Search App for Person Datasource</description>
   <properties>
   		<jdk.version>1.7</jdk.version>
-  		<spring.version>3.2.5.RELEASE</spring.version>
+  		<spring.version>5.3.18</spring.version>
   		<spring.security.version>3.2.0.RELEASE</spring.security.version>
   		<jstl.version>1.2</jstl.version>
   		<jackson.version>1.9.13</jackson.version>
